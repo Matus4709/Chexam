@@ -1,0 +1,46 @@
+<html lang="pl-PL">
+<head>
+  <meta charset="UTF-8">
+  <title>Chexam</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Chexam</h1>
+    <div class="api-key-section">
+      <input type="password" id="apiKey" placeholder="Enter your Gemini API Key">
+      <button id="saveApiKey">Save API Key</button>
+    </div>
+    <div class="api-key-info">
+      <p>Get your API key from <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio (Gemini)</a></p>
+    </div>
+    <div class="main-section">
+      <button id="captureQuestion">Pobierz pytanie</button>
+      <div id="status"></div>
+      <div id="result" class="result-box"></div>
+    </div>
+  </div>
+  <div id="manual-link-container" style="margin-top: 24px; text-align: center;">
+    <a href="#" id="showManual" style="color: #3498db; text-decoration: underline; cursor: pointer;">Instrukcja obsługi</a>
+  </div>
+
+  <div id="manualPopup" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:99999; justify-content:center; align-items:center;">
+    <div style="background:#fff; padding:32px; max-width:500px; border-radius:8px; box-shadow:0 2px 16px rgba(0,0,0,0.2); position:relative;">
+      <button id="closeManual" style="position:absolute; top:8px; right:8px; background:none; border:none; font-size:20px; cursor:pointer;">&times;</button>
+      <h2>Instrukcja obsługi Chexam</h2>
+      <ol style="text-align:left;">
+        <li>Otwórz stronę z pytaniami egzaminacyjnymi lub innym tekstem, który chcesz przeanalizować.</li>
+        <li>Zaznacz myszką interesujące Cię pytanie lub fragment tekstu na stronie (tak jak zwykły tekst).</li>
+        <li>Kliknij ikonę rozszerzenia <b>Chexam</b> w pasku przeglądarki.</li>
+        <li>W oknie popup kliknij przycisk <b>Pobierz pytanie</b> (lub podobny).</li>
+        <li>Rozszerzenie pobierze zaznaczony tekst i wyśle go do Gemini (Google AI Studio).</li>
+        <li>Odpowiedź pojawi się w oknie popup oraz w konsoli popupu (F12).</li>
+        <li>Jeśli używasz rozszerzenia po raz pierwszy, wprowadź swój klucz Gemini API w odpowiednim polu popupu.</li>
+        <li>Rozszerzenie działa tylko na zwykłych stronach internetowych (nie na chrome:// itp.).</li>
+      </ol>
+      <p style="font-size:13px; color:#888;">Wskazówka: Jeśli nie widzisz odpowiedzi, sprawdź konsolę popupu (F12) lub upewnij się, że masz aktywny klucz Gemini API.</p>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html> 
